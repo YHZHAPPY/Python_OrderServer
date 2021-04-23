@@ -1,3 +1,8 @@
+'''
+Description: 
+Author: Yang Hongzhi
+Date: 2021-04-22 15:07:08
+'''
 """OrderService URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,7 +20,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from login import views as loginAPI
 urlpatterns = [
+    path('',loginAPI.WeChatLogin),
     path('admin/', admin.site.urls),
 ]
