@@ -1,0 +1,22 @@
+<!--
+ * @Description: 
+ * @Author: Yang Hongzhi
+ * @Date: 2021-04-26 10:09:55
+-->
+<!--加载静态资源-->
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for user in UserInfo %}
+        <h1>{{user.RealName}}</h1>
+    {% endfor %}
+    <img src="{% static 'timg.jpg' %}">
+</body>
+</html>
