@@ -18,10 +18,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from login.admin import OrderAdmin
+from django.contrib import admin
 from django.urls import path
 from login import views as loginAPI
 urlpatterns = [
     path('',loginAPI.WeChatLogin),
-    path('admin/', OrderAdmin.urls),
+    path('admin/', admin.site.urls),
 ]
