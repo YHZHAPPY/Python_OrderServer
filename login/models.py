@@ -11,18 +11,16 @@ class  UserInfo(models.Model):
     class Meta:
         verbose_name = "用户"
         verbose_name_plural = "用户列表"
-    ID=models.AutoField(primary_key=True)
+    ID=models.AutoField(primary_key=True,verbose_name='序号')
+    #微信获取OpenID
     OpenID=models.CharField(max_length=50)
+    #头像地址
     Icon=models.CharField(max_length=200)
-    RealName=models.CharField(max_length=50)
+    RealName=models.CharField(max_length=50,verbose_name='姓名')
+    NickName=models.CharField(max_length=50)
+    Gender=models.NullBooleanField(default=None,verbose_name='性别')
+    Telephone=models.CharField(max_length=11,default=None,verbose_name='电话')
+    #用户角色
+    Role=models.IntegerField(default=0,verbose_name='用户类型')
     def __str__(self):
-        return self.OpenID
-#管理员信息
-class AdminInfo(models.Model):
-    class Meta:
-        verbose_name = "管理员"
-        verbose_name_plural = "管理员列表"
-    ID=models.AutoField(primary_key=True)
-    Account=models.CharField(max_length=50)
-    PassWord=models.CharField(max_length=50)
-    Power=models.IntegerField()#区分权限
+        return self.NickName
