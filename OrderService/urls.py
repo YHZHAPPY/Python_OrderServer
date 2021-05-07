@@ -22,6 +22,6 @@ from django.contrib import admin
 from django.urls import path
 from login import views as loginAPI
 urlpatterns = [
-    path('',loginAPI.WeChatLogin),
-    path('admin/', admin.site.urls),
+    path('',admin.site.urls),
+   # path('admin/', admin.site.urls),
 ]
