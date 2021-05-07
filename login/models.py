@@ -16,7 +16,9 @@ class  UserInfo(models.Model):
     OpenID=models.CharField(max_length=50)
     #头像地址
     Icon=models.CharField(max_length=200)
-    RealName=models.CharField(max_length=50,verbose_name='姓名')
+    #商户信息
+    RealName=models.CharField(max_length=50,verbose_name='商户信息',default="")
+    #微信的昵称
     NickName=models.CharField(max_length=50)
     Gender=models.NullBooleanField(default=None,verbose_name='性别')
     Telephone=models.CharField(max_length=11,default=None,verbose_name='电话')
